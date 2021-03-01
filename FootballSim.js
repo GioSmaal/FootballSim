@@ -5,6 +5,8 @@ var attAway;
 var midAway;
 var defAway;
 
+var countGames = 0;
+
 function selectHome() { //onchange functie die het thuis team de bijbehorende waardes geeft
     var homeTeam = document.getElementById("homeTeam").value;
     if (homeTeam == "Bayern") {
@@ -54,9 +56,6 @@ function startMatch() { //match engine
     for (var i = 0; i < 91; i++) { //for loop die elke minuut t/m 90 simuleert
     task(i);
 
-    if (i > 90) { //einde wedstrijd
-        document.getElementById("button").disabled = false;
-    }
     }
     function task(i) {
         setTimeout(function() { //seTimeout in de for loop zodat deze elke 2 seconden 1 minuut verder gaat, anders gaat het te snel
@@ -129,7 +128,16 @@ function startMatch() { //match engine
                     document.getElementById("goal").classList.add("goalanimation");                    
                 }
             }
-            
+            if (i > 89) { //einde wedstrijd
+                countGames++;
+                document.getElementById("button").disabled = false;
+                document.getElementById("button").innerHTML = "NEW GAME";
+                var add = document.createTextNode ("Game " + countGames + ": " + document.getElementById("homeTeam").value + " " + scoreHome + " - " + scoreAway + " " + document.getElementById("awayTeam").value);
+                var br = document.createElement("br");
+                document.getElementById("results").appendChild(add);
+                document.getElementById("results").appendChild(br);
+
+            }
             
 
         }, 1000 * i);
