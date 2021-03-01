@@ -1,0 +1,113 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.team {
+  margin-bottom: 5px;
+}
+
+.pitch {
+  max-width: 80%;
+  width: 60%;
+  margin-top: 5px;
+}
+
+.ball {
+  max-width: 6%;
+  max-height: 6%; 
+  position: relative;
+  top: 500%;
+
+}
+.timer {
+  font-size: large;
+}
+
+.score {
+  font-size: 200%;
+}
+
+.button {
+  margin-bottom: 140px;
+}
+
+.ball.animationright {
+  animation: ballRight 1s forwards;
+  }
+
+.ball.animationrightreverse {
+  animation: ballRightReverse 1s forwards;
+  }
+
+.ball.animationleft {
+  animation: ballLeft 1s forwards;
+  }
+
+.ball.animationleftreverse {
+  animation: ballLeftReverse 1s forwards;
+  }
+
+.ball.animationrightgoal {
+  animation: ballRightGoal 0.5s;
+}
+
+.ball.animationleftgoal {
+  animation: ballLeftGoal 0.5s;
+}
+
+@keyframes ballRight {
+  0% {left: 0%;}
+
+  100% {left: 20%; transform:rotate(360deg);}
+}
+
+@keyframes ballLeft {
+  0% {right: 0%;}
+
+  100% {right: 20%; transform:rotate(360deg);}
+}
+
+@keyframes ballLeftReverse {
+  0% {right: 20%;}
+
+  100% {right: 0%; transform:rotate(360deg);}
+}
+
+@keyframes ballRightReverse {
+  0% {left: 20%;}
+
+  100% {left: 0%; transform:rotate(360deg);}
+}
+
+@keyframes ballRightGoal {
+  0% {left: 20%; bottom: 0px;}
+
+  100% {left: 60%; bottom: 350px; transform:rotate(360deg);}
+}
+
+@keyframes ballLeftGoal {
+  0% {right: 20%; bottom: 0px;}
+
+  100% {right: 60%; bottom: 350px; transform:rotate(360deg);}
+}
+
+.goal {
+  font-size: 500%;
+  font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  position: absolute;
+  visibility: hidden;
+}
+
+.goal.goalanimation {
+  visibility: visible;
+  animation: goalanimation 1.5s;
+}
+
+@keyframes goalanimation {
+  0% {top: 0%;}
+
+  100% {top: 100%;}
+}

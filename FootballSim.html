@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Match Simulator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FootballSim.css">
+    <script src="FootballSim.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="flex">
+        <select id="homeTeam" class="team" onchange="selectHome()">
+            <option value="" disabled selected>Home Team</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Bayern">Bayern Munchen</option>
+            <option value="Liverpool">Liverpool</option>
+
+          </select>
+
+        <select id="awayTeam" class="team" onchange="selectAway()">
+            <option value="" disabled selected>Away Team</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Bayern">Bayern Munchen</option>
+            <option value="Liverpool">Liverpool</option>
+
+          </select>
+        
+        <button id="button" class="button" onclick="startMatch()">START</button>
+        
+        <img src="ball.png" id="ball" class="ball">
+        <img src="pitch.png" id="pitch" class="pitch">
+        
+        
+        <div id="timer" class="timer"></div>
+        <div id="score" class="score"></div>
+        <p class="goal" id="goal">GOAAAL!!!</p>
+        <div id="results" class="results"></div>
+
+    </div>
+    
+</body>
+</html>
