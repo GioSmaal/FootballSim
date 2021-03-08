@@ -78,12 +78,12 @@ function startMatch() { //match engine
 
                 document.getElementById("goal").classList.remove("goalanimation");
                 
-                if (home > away + 10) { //als thuis > uit gaat de bal naar rechts
+                if (home > away + 8) { //als thuis > uit gaat de bal naar rechts
                     location = "right";
                     document.getElementById("ball").classList.add("animationright");
                 }
 
-                else if (away > home + 10) { //als uit > thuis gaat de bal naar rechts
+                else if (away > home + 8) { //als uit > thuis gaat de bal naar rechts
                     location = "left";
                     document.getElementById("ball").classList.add("animationleft");                    
                 }
