@@ -9,39 +9,89 @@ var countGames = 0;
 
 function selectHome() { //onchange functie die het thuis team de bijbehorende waardes geeft
     var homeTeam = document.getElementById("homeTeam").value;
-    if (homeTeam == "Bayern") {
-        defHome = 25;
-        midHome = 20;
+    if (homeTeam == "ACMilan") {
+        defHome = 20;
+        midHome = 21;
         attHome = 20;
     }
     if (homeTeam == "Barcelona") {
         defHome = 25;
-        midHome = 20;
+        midHome = 24;
         attHome = 20;
     }
     if (homeTeam == "Liverpool") {
-        defHome = 2;
-        midHome = 2;
-        attHome = 2;
+        defHome = 25;
+        midHome = 23;
+        attHome = 20;
+    }
+    if (homeTeam == "KaaGent") {
+        defHome = 20;
+        midHome = 27;
+        attHome = 30;
+    }
+    if (homeTeam == "Marseille") {
+        defHome = 20;
+        midHome = 21;
+        attHome = 20;
+    }
+    if (homeTeam == "ManchesterUnited") {
+        defHome = 20;
+        midHome = 21;
+        attHome = 20;
+    }
+    if (homeTeam == "Olympiacos") {
+        defHome = 25;
+        midHome = 32;
+        attHome = 30;
+    }
+    if (homeTeam == "SportingCP") {
+        defHome = 20;
+        midHome = 21;
+        attHome = 20;
     }
 }
 
 function selectAway() { //onchange functie die het uit team de bijbehorende waardes geeft
     var awayTeam = document.getElementById("awayTeam").value;
-    if (awayTeam == "Bayern") {
-        defAway = 25;
-        midAway = 20;
+    if (awayTeam == "ACMilan") {
+        defAway = 20;
+        midAway = 21;
         attAway = 20;
     }
     if (awayTeam == "Barcelona") {
         defAway = 25;
-        midAway = 20;
+        midAway = 24;
         attAway = 20;
     }
     if (awayTeam == "Liverpool") {
-        defAway = 2;
-        midAway = 2;
-        attAway = 2;
+        defAway = 22;
+        midAway = 23;
+        attAway = 20;
+    }
+    if (awayTeam == "KaaGent") {
+        defAway = 20;
+        midAway = 25;
+        attAway = 30;
+    }
+    if (awayTeam == "Marseille") {
+        defAway = 20;
+        midAway = 21;
+        attAway = 20;
+    }
+    if (awayTeam == "ManchesterUnited") {
+        defAway = 20;
+        midAway = 21;
+        attAway = 20;
+    }
+    if (awayTeam == "Olympiacos") {
+        defAway = 25;
+        midAway = 32;
+        attAway = 30;
+    }
+    if (awayTeam == "SportingCP") {
+        defAway = 20;
+        midAway = 21;
+        attAway = 20;
     }
 }
 
@@ -78,12 +128,12 @@ function startMatch() { //match engine
 
                 document.getElementById("goal").classList.remove("goalanimation");
                 
-                if (home > away + 8) { //als thuis > uit gaat de bal naar rechts
+                if (home > away + 10) { //als thuis > uit gaat de bal naar rechts
                     location = "right";
                     document.getElementById("ball").classList.add("animationright");
                 }
 
-                else if (away > home + 8) { //als uit > thuis gaat de bal naar rechts
+                else if (away > home + 10) { //als uit > thuis gaat de bal naar rechts
                     location = "left";
                     document.getElementById("ball").classList.add("animationleft");                    
                 }
@@ -93,7 +143,7 @@ function startMatch() { //match engine
                 var home = Math.floor(Math.random() * attHome) + 1;
                 var away = Math.floor(Math.random() * defAway) + 1;
 
-                if (home > away + 10) {
+                if (home > away + 15) {
                     location = "middle";
                     scoreHome++;
                     
@@ -119,7 +169,7 @@ function startMatch() { //match engine
 
                 }
 
-                else if (away > home + 10) {
+                else if (away > home + 15) {
                     location = "middle";
                     scoreAway++; 
 
